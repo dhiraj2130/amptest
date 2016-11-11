@@ -1,0 +1,22 @@
+{
+  "name": "amptest",
+  "version": "1.0.0",
+  "description": "for testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhiraj2130/amptest.git"
+  },
+  "keywords": [
+    "dhiraj2130"
+  ],
+  "author": "dhiraj2130",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhiraj2130/amptest/issues"
+  },
+  "homepage": "https://github.com/dhiraj2130/amptest#readme"
+}

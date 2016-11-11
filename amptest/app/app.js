@@ -4,13 +4,13 @@
 //var MainController = require('./src/controllers/MainController');
 //var viewpage = require('./main.html');
 
-require('angular');
-require('angular-route');
-require('angular-ui-bootstrap');
-require('angular-ui-router');
-require('jquery');
+// require('angular');
+// require('angular-route');
+// require('angular-ui-bootstrap');
+// require('angular-ui-router');
+// require('jquery');
 
-var app = angular.module('app',['ngRoute']);
+var app = angular.module('app',[]);
 
 //
 // app.config(function($routeProvider) {

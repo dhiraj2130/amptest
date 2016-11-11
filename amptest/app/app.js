@@ -17,12 +17,14 @@ var app = angular.module('app',[]);
 //     $routeProvider
 //         .when('/hello', {
 //             // controller: 'MainController',
-//             template : viewpage
+//             template : viewpagegit
 //         });
 // });
 
 app.controller('MainController', ['$scope', function($scope){
-    $scope.peopleList = ['Sean','Yaw','Lucy','Eric','Rory','Hayley'];
+    $scope.peopleList = ['Sean','Yaw','Lucy','Eric','Rory','Hayley'
+
+    ];
 
     $scope.title = "hello title";
 }]);

@@ -22,6 +22,7 @@
   "homepage": "https://github.com/dhiraj2130/amptest#readme",
   "devDependencies": {
     "angular-mocks": "^1.5.8",
+    "css-loader": "^0.25.0",
     "jasmine-core": "^2.3.4",
     "karma": "^0.12.31",
     "karma-chrome-launcher": "^0.1.12",
@@ -30,9 +31,7 @@
   },
   "dependencies": {
     "angular": "^1.5.8",
-    "angular-route": "^1.5.8",
     "angular-ui-bootstrap": "^2.2.0",
-    "angular-ui-router": "^0.3.2",
     "bootstrap-loader": "^1.3.0",
     "bootstrap-sass": "^3.3.7",
     "css-loader": "^0.25.0",

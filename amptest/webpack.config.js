@@ -5,6 +5,7 @@
 var webpack           = require('webpack'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     path              = require('path');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var PATHS = {
     app  : __dirname + '/app',
@@ -13,7 +14,6 @@ var PATHS = {
 
 var aliases = {
     'angular': require.resolve('angular'),
-    'angular-ui-router': require.resolve('./node_modules/angular-ui-router/release/angular-ui-router.js'),
     'bootstrap': require.resolve('bootstrap/dist/js/bootstrap.js')
 
 }
@@ -59,8 +59,11 @@ module.exports = {
             loader: "url?limit=10000&mimetype=image/svg+xml"
         }, { test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
             loader: 'file-loader?limit=30000&name=[name]-[hash].[ext]'
-        }
-            // { test: /\.css$/, loader: "style!css" }
+        }, { test: /\.css$/, loader: "style-loader!css-loader" },
+            {
+                test  : /\.scss$/,
+                loader: 'style!css!sass'
+            }
 
         ]
     },
@@ -77,10 +80,6 @@ module.exports = {
         new webpack.ProvidePlugin({
             $     : "jquery",
             jQuery: "jquery"
-        })//,
-        // new webpack.ProvidePlugin({
-        //     $     : "jquery",
-        //     jQuery: "jquery"
-        // })
+        })
     ]
 };

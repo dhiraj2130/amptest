@@ -7,10 +7,9 @@ describe('Main Controller', function () {
     beforeEach(function () {
         angular.mock.module('app');
 
-        inject(function ($rootScope, $q, $controller) {
+        inject(function ($rootScope,  $controller) {
             scope = $rootScope.$new();
             mainController = $controller('MainController',{$scope:scope});
-
         });
     });
 
@@ -19,6 +18,6 @@ describe('Main Controller', function () {
         expect(scope.peopleList).toBeDefined();
         expect(scope.peopleList.length).toEqual(6);
         expect(scope.peopleList).toEqual(testData);
-
+        expect(scope.title).toEqual("AMP Test");
     });
 });

@@ -5,7 +5,6 @@
 var webpack           = require('webpack'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     path              = require('path');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var PATHS = {
     app  : __dirname + '/app',
@@ -64,15 +63,10 @@ module.exports = {
                 test  : /\.scss$/,
                 loader: 'style!css!sass'
             }
-
         ]
     },
     plugins  : [
-        // new ExtractTextPlugin("style.css", {
-        //     allChunks: true
-        // }),
         new webpack.HotModuleReplacementPlugin(),
-
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: PATHS.app + '/index.html'

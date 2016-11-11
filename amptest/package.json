@@ -4,6 +4,7 @@
   "description": "for testing",
   "main": "index.js",
   "scripts": {
+    "build": "./node_modules/.bin/webpack",
     "test": "karma start karma.conf.js",
     "start": "node node_modules/.bin/webpack-dev-server --hot --inline"
   },

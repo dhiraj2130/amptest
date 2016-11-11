@@ -13,6 +13,7 @@ module.exports = function () {
     require('angular-route');
     require('angular-ui-bootstrap');
     require('angular-ui-router');
+    require('jquery');
     
    // require('angular-sanitize');
     

@@ -1,12 +1,29 @@
 /**
  * Created by dhiraj.kumar on 11/11/2016.
  */
-var app = angular.module('app',['ui.router']);
+//var MainController = require('./src/controllers/MainController');
+//var viewpage = require('./main.html');
 
-// app.config(
-//     function(){
+require('angular');
+require('angular-route');
+require('angular-ui-bootstrap');
+require('angular-ui-router');
+require('jquery');
+
+var app = angular.module('app',['ngRoute']);
+
 //
-//     }
-// )
+// app.config(function($routeProvider) {
+//     $routeProvider
+//         .when('/hello', {
+//             // controller: 'MainController',
+//             template : viewpage
+//         });
+// });
 
+app.controller('MainController', ['$scope', function($scope){
+    $scope.peopleList = ['Sean','Yaw','Lucy','Eric','Rory','Hayley'];
+
+    $scope.title = "hello title";
+}]);
 module.exports = app;

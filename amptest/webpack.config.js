@@ -1,12 +1,22 @@
 /**
  * Created by dhiraj.kumar on 11/11/2016.
  */
-var webpack = require('webpack');
+
+var webpack           = require('webpack'),
+    HtmlWebpackPlugin = require('html-webpack-plugin'),
+    path              = require('path');
 
 var PATHS = {
     app  : __dirname + '/app',
     build: __dirname + '/build'
 };
+
+var aliases = {
+    'angular': require.resolve('angular'),
+    'angular-ui-router': require.resolve('./node_modules/angular-ui-router/release/angular-ui-router.js'),
+    'bootstrap': require.resolve('bootstrap/dist/js/bootstrap.js')
+
+}
 
 module.exports = {
     context  : PATHS.app,
@@ -18,7 +28,7 @@ module.exports = {
         ]
     },
     output: {
-        path    : PATHS.build,
+         path    : PATHS.build,
         filename: "bundle.js"
     },
     devServer: {
@@ -27,6 +37,9 @@ module.exports = {
     },
     module: {
         loaders: [{
+            test: /\.html$/,
+            loader: "html-loader"
+        },{
             test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
             loader: "file-loader?limit=10000&mimetype=application/font-woff"
         }, {
@@ -50,5 +63,24 @@ module.exports = {
             // { test: /\.css$/, loader: "style!css" }
 
         ]
-    }
+    },
+    plugins  : [
+        // new ExtractTextPlugin("style.css", {
+        //     allChunks: true
+        // }),
+        new webpack.HotModuleReplacementPlugin(),
+
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: PATHS.app + '/index.html'
+        }),
+        new webpack.ProvidePlugin({
+            $     : "jquery",
+            jQuery: "jquery"
+        })//,
+        // new webpack.ProvidePlugin({
+        //     $     : "jquery",
+        //     jQuery: "jquery"
+        // })
+    ]
 };
